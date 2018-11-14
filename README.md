@@ -1,2 +1,2 @@
 # powershell
-Repo for Powershell scripts
+Repo for general Powershell scripts for Windows Administration
