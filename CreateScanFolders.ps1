@@ -9,7 +9,7 @@
 
 Import-Module ActiveDirectory
 #Path to the Scans folder (commented out for testing purposes)
-$Path = '\\HS1NAS01\Shared\Scans\'
+$Path = 'Path to share'
 
 #User to create the folder for
 $UserFN = Read-Host "Input user's first name"
@@ -59,18 +59,18 @@ $ACL = Get-Acl $NewPath
 
 # Variables to ADD the necessary permissions
 $ACLFullControl = New-Object System.Security.AccessControl.FileSystemAccessRule @($ADUserName, "FullControl", "Allow")
-$ACLAdminFC = New-Object System.Security.AccessControl.FileSystemAccessRule @("BUILTIN\Administrators", "FullControl", "Allow")
-$ACLSysFC = New-Object System.Security.AccessControl.FileSystemAccessRule @("NT AUTHORITY\SYSTEM", "FullControl", "Allow")
-$ACLScanFC = New-Object System.Security.AccessControl.FileSystemAccessRule @("ColorScan", "FullControl", "Allow")
+$ACLAdminFC = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToAdd", "FullControl", "Allow")
+$ACLSysFC = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToAdd", "FullControl", "Allow")
+$ACLScanFC = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToAdd", "FullControl", "Allow")
 
 # Variables to REMOVE pre-inherited permissions
-$ACLRem1 = New-Object System.Security.AccessControl.FileSystemAccessRule @("HEALTHSYSTEMONE\DenyHRR", "FullControl", "Deny")
-$ACLRem2 = New-Object System.Security.AccessControl.FileSystemAccessRule @("HEALTHSYSTEMONE\TNPR_MD", "FullControl", "Deny")
-$ACLRem3 = New-Object System.Security.AccessControl.FileSystemAccessRule @("HEALTHSYSTEMONE\No_Share_Access", "FullControl", "Deny")
-$ACLRem4 = New-Object System.Security.AccessControl.FileSystemAccessRule @("NT Authority\Authenticated Users", "ReadAndExecute", "Allow")
-$ACLRem5 = New-Object System.Security.AccessControl.FileSystemAccessRule @("HEALTHSYSTEMONE\Corporate Users", "ReadAndExecute", "Allow")
-$ACLRem6 = New-Object System.Security.AccessControl.FileSystemAccessRule @("HEALTHSYSTEMONE\Domain Admins", "FullControl", "Allow")
-$ACLRem7 = New-Object System.Security.AccessControl.FileSystemAccessRule @("HEALTHSYSTEMONE\DomainPowerAdmin", "Modify", "Allow")
+$ACLRem1 = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToRemove", "FullControl", "Deny")
+$ACLRem2 = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToRemove", "FullControl", "Deny")
+$ACLRem3 = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToRemove", "FullControl", "Deny")
+$ACLRem4 = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToRemove", "ReadAndExecute", "Allow")
+$ACLRem5 = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToRemove", "ReadAndExecute", "Allow")
+$ACLRem6 = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToRemove", "FullControl", "Allow")
+$ACLRem7 = New-Object System.Security.AccessControl.FileSystemAccessRule @("PermissionToRemove", "Modify", "Allow")
 
 # Add the Access Rules to the ACL
 $ACL.SetAccessRule($ACLFullControl)
