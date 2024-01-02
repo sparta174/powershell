@@ -3,7 +3,7 @@
 #  This script is to lookup all currently Live computers in AD  
 #  then find which users are currently logged into them
 #  Version 1
-#  Created by: Nick Ross
+#  Created by: ph4lanx
 #  Create Date: 11/5/2018
 #
 ################################################################
