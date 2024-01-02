@@ -1,5 +1,5 @@
 ﻿#Get Computer List
-$ComputerList = Import-CSV "\\Mac\Home\Documents\Powershell Scripts\PCList2.csv" | Select-Object -ExpandProperty Name
+$ComputerList = Import-CSV "*" | Select-Object -ExpandProperty Name
 
 
 #Get Currently Logged in User
