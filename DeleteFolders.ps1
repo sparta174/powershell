@@ -1,5 +1,5 @@
-﻿$ToBeDeleted = Import-CSV '\\Mac\Home\Documents\Powershell Scripts\Test\Delete.csv' | Select-Object -ExpandProperty Name
-$Where = '\\Mac\Home\Documents\Powershell Scripts\Test\'
+﻿$ToBeDeleted = Import-CSV '*' | Select-Object -ExpandProperty Name
+$Where = '*'
 $Delete = $Where + $ToBeDeleted
 
 foreach ($FolderName in $ToBeDeleted) {
