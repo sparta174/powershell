@@ -1,5 +1,6 @@
-﻿#Get Computer List
-#$ComputerList = Import-CSV "C:\Stuffs\ARWListChunk7.csv" | Select-Object -ExpandProperty Name
+﻿#Get Computer List
+
+#$ComputerList = Import-CSV "C:\Stuffs\*.csv" | Select-Object -ExpandProperty Name
 #$HostList = @()
 #$IPs = [System.Net.Dns]::GetHostAddresses($ComputerList)
 #[System.Net.Dns]::GetHostAddresses($ComputerList) | foreach {echo $_.IPAddressToString }
