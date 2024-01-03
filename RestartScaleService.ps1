@@ -1,5 +1,5 @@
 # Get Computer List
-$ComputerList = Import-CSV "\\B79FS\Apps\ITDocs\Powershell Scripts\TestList4.csv" | Select-Object -ExpandProperty Name
+$ComputerList = Import-CSV "\\*\Apps\ITDocs\Powershell Scripts\TestList4.csv" | Select-Object -ExpandProperty Name
 
 # Check The Scale Service
 foreach ($ComputerName in $ComputerList) {
