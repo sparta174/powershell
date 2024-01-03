@@ -24,7 +24,7 @@ else {
     }
 
 # Import the CSV with the PCs to change the passwords for
- $ComputerList = Import-Csv "C:\Stuffs\ARWListChunk7.csv" | Select-Object -ExpandProperty Name
+ $ComputerList = Import-Csv "C:\Stuffs\ListChunk7.csv" | Select-Object -ExpandProperty Name
 
 # Get Password to change local admin password to
 $Pass = Read-Host -AsSecureString
@@ -38,5 +38,3 @@ foreach ($Computer in $ComputerList) {
 }
 
 Write-Host "You have successfully stolen the network. Congratulations!"
-
-# BlueRightDown74!
